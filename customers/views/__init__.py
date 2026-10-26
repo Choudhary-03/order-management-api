@@ -1,0 +1,3 @@
+from .create_customer_views import CustomerCreateView
+from .customer_admin_views import CustomerAdminDetailView
+from .customer_profile import CustomerProfileView

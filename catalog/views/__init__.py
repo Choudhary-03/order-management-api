@@ -1,0 +1,5 @@
+from .category_views import CategoryDetailView, CategoryListView
+from .product_detail_views import ProductDetailView
+from .product_create_views import ProductCreateView
+from .product_list_views import ProductListView
+from .product_patch_views import ProductRetrieveView
