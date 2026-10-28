@@ -151,7 +151,11 @@ REST_FRAMEWORK = {
         'drf_spectacular.openapi.AutoSchema',
     
     'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
+    
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+        'PAGE_SIZE': 5,
 }
+
 
 SPECTACULAR_SETTINGS = {
     
@@ -167,3 +171,4 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+

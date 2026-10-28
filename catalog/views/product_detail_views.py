@@ -25,7 +25,7 @@ class ProductDetailView(GenericAPIView):
         return Response(serializer.data, status=200)
 
     def delete(self, request, pk):
-        product = get_object_or_404(self. get_queryset() , pk=pk)
+        product = get_object_or_404(self.get_queryset() , pk=pk)
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
                 

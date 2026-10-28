@@ -45,8 +45,11 @@ class ProductSerializer(serializers.Serializer):
         
         category_id = validated_data.pop('category_id')
         category= Category.objects.get(pk=category_id)
-        item= Product.objects.select_for_update().filter(name__iexact=validated_data['name']).first()
-        
+
+        name = validated_data['name']
+        products = Product.objects.select_for_update()
+        products = products.filter(name__iexact=name)
+        item = products.first()        
         if item:
             if item.category_id != category.id:
                 raise serializers.ValidationError(
