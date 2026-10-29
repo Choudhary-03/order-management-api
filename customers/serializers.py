@@ -5,9 +5,9 @@ class CustomerSerializer(serializers.Serializer):
     id= serializers.IntegerField(read_only=True)
     first_name= serializers.CharField(max_length=100)
     last_name= serializers.CharField(max_length=100)
-    phone_number=serializers.CharField(max_length=10)
-    email=serializers.EmailField(max_length=100)
-    address=serializers.CharField(max_length=100)
+    phone_number=serializers.CharField(max_length=10, unique=True)
+    email=serializers.EmailField(max_length=100, unique=True)
+    address=serializers.CharField(allow_blank= False)
     
     def validate_first_name(self,value):
         value=value.strip()
